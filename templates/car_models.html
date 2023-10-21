@@ -1,0 +1,47 @@
+{% extends 'tables_base.html' %}
+
+{% block title %}
+<title>car models</title>
+{% endblock title %}
+
+{% block table %}
+{% load static %}
+
+<style>
+  body{
+    background-color:#c7c4c4;
+  }
+  h4 {
+    background-color:#2e4863 ;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+</style>
+<h4 class="text-center">Car Models Table</h4>
+<table class="table" style="background-color: #04407b;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Car model code</th>
+          <th scope="col">Manufacturer code</th>
+          <th scope="col">Model name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for car_model in car_models %}
+        <tr>
+          <th scope="row">{{car_model.car_model_code }}</th>
+          <td>{{car_model.manufacturer_code  }}</td>
+          <td>{{car_model.model_name  }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+{% endblock table %}

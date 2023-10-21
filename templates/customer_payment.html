@@ -1,0 +1,53 @@
+{% extends 'tables_base.html' %}
+
+{% block title %}
+<title>customer payment</title>
+{% endblock title %}
+
+{% block table %}
+{% load static %}
+
+<style>
+  body{
+    background-color:#c7c4c4;
+  }
+  h4 {
+    background-color:#2e4863 ;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+</style>
+<h4 class="text-center">Customers Payment</h4>
+<table class="table" style="background-color: #04407b;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Customer</th>
+          <th scope="col">Car sold</th>
+          <th scope="col">Payemnt date</th>
+          <th scope="col">Payment date due</th>
+          <th scope="col">Payment Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+      {%for Payment in customer_payments%}
+        <tr>
+          <th scope="row">{{Payment.customer_payment_id}}</th>
+          <td>{{Payment.customer}}</td>
+          <td>{{Payment.car_sold}}</td>
+          <td>{{Payment.customer_payemnt_date}}</td>
+          <td>{{Payment.customer_payment_date_due}}</td>
+          <td>{{Payment.customer_payment_amt}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+{% endblock table %}

@@ -1,0 +1,53 @@
+{% extends 'tables_base.html' %}
+
+{% block title %}
+<title>insurance policies</title>
+{% endblock title %}
+
+{% block table %}
+{% load static %}
+
+<style>
+  body{
+    background-color:#c7c4c4;
+  }
+  h4 {
+    background-color:#2e4863 ;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+</style>
+<h4 class="text-center">Insurance Policies Table </h4>
+<table class="table" style="background-color: #04407b;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Car sold</th>
+          <th scope="col">Customer Id</th>
+          <th scope="col">Insurance company Id</th>
+          <th scope="col">Policy start date</th>
+          <th scope="col">Monthly payments</th>
+        </tr>
+      </thead>
+      <tbody>
+      {%for policy in insurance_policies%}
+        <tr>
+          <th scope="row">{{policy.policy_id}}</th>
+          <td>{{policy.car_sold}}</td>
+          <td>{{policy.customer}}</td>
+          <td>{{policy.insurance_company}}</td>
+          <td>{{policy.policy_start_date}}</td>
+          <td>{{policy.monthly_payments}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+{% endblock table %}

@@ -1,0 +1,47 @@
+{% extends 'tables_base.html' %}
+
+{% block title %}
+<title>insurance company</title>
+{% endblock title %}
+
+{% block table %}
+{% load static %}
+
+<style>
+  body{
+    background-color:#c7c4c4;
+  }
+  h4 {
+    background-color:#2e4863 ;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+</style>
+<h4 class="text-center">Insurance Company Table </h4>
+<table class="table" style="background-color: #04407b;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Insurance company name</th>
+          <th scope="col">Other Details</th>
+        </tr>
+      </thead>
+      <tbody>
+      {%for company in insurance_companies%}
+        <tr>
+          <th scope="row">{{company.insurance_company_id}}</th>
+          <td>{{company.insurance_company_name}}</td>
+          <td>{{company.other_details}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+{% endblock table %}

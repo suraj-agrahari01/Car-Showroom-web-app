@@ -1,0 +1,261 @@
+{% extends 'tables_base.html' %} {% block title %}
+<title>Report Generate</title>
+{% endblock title %} {% block table %} {% load static %} {% comment %}
+****************************1st row********************************************
+{% endcomment %}
+
+<div class="container col-md-12 py-4">
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+       <h3>Graph Showing manufatures and total priced for each Manufacturers</h3>
+        <div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+  </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Insurance company and number of times used for Insurance</h2>
+    <div id="container" style="width: 75%;">
+    <canvas id="third-row2"></canvas>
+  </div> 
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} ****************************************************2nd
+row******************************************** {% endcomment %}
+
+
+<div class="container col-md-12 py-4">
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Manufacturers with servicing used percent</h2>
+        <div id="container" style="width: 75%;">
+    <canvas id="pie-chart1"></canvas>
+  </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Employee with their total leave</h2>
+        <div id="container" style="width: 75%;">
+    <canvas id="line-chart"></canvas>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} ****************3rd row************************************* {% endcomment %}
+
+<div class="container col-md-12 py-4">
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Employee with their Salary</h2>
+        <div id="container" style="width: 75%;">
+    <canvas id="third-row1"></canvas>
+  </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+       
+  <h3>Table showing the car sold and their manufatures to analyse highest selling brand</h3>
+        <table class="table" style="background-color: #1b630e;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Car_for_sale_id</th>
+          <th scope="col">Manufacturers</th>
+          <th scope="col">sold_price</th>
+          <th scope="col">car_sold_id</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      {%for item in table_data%}
+        <tr>
+        {%for jtem in item%}
+          <td>{{jtem}}</td>
+          {% endfor %}
+          
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} ******************Scripts***************************** {% endcomment %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script >
+
+var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ y_axis|safe }},
+          backgroundColor: [
+            '#32a651', '#6b821f', '#e60e0e', '#FFBD33'
+          ],
+          label: 'Car with manufatures'
+        }],
+        labels: {{ x_axis|safe }}
+      },
+      options: {
+        responsive: true,animation: {
+            duration: 5000,
+        }
+      }
+    };
+
+
+
+    var config1 = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ y_axis|safe }},
+          backgroundColor: [
+             '#32a651', '#6b821f', '#e60e0e', '#FFBD33'
+          ],
+          label: 'Car with manufatures'
+        }],
+        labels: {{ x_axis|safe }}
+      },
+      options: {
+        responsive: true,animation: {
+            duration: 5000,
+        }
+      }
+    };
+
+
+    
+    var config2 = {
+      type: 'line',
+      data: {
+        datasets: [{
+          data: {{ total_leave|safe }},
+          backgroundColor: [
+             '#32a651', '#6b821f', '#e60e0e', '#FFBD33'
+          ],
+          label: 'Employee with their toatal leaves'
+        }],
+        labels: {{ customer_id|safe }}
+      },
+      options: {
+        responsive: true,animation: {
+            duration: 5000,
+        }
+      }
+    };
+
+
+ var config3 = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ servicng_used_percent|safe }},
+          backgroundColor: [
+              '#e60e0e', '#FFBD33'
+          ],
+          label: 'Manufacturers with servicing used percent'
+        }],
+        labels: {{ manufacturers|safe }}
+      },
+      options: {
+        responsive: true,animation: {
+            duration: 5000,
+        }
+      }
+    };
+
+ var config4 = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ insurance_times|safe }},
+          backgroundColor: [
+             '#32a651', '#FFBD33'
+          ],
+          label: 'Insurance Company and their uses'
+        }],
+        labels: {{ insurance_company_name|safe }}
+      },
+      options: {
+        responsive: true,animation: {
+            duration: 5000,
+        }
+      }
+    };
+    
+    var config_employee = {
+      type: 'line',
+      data: {
+        datasets: [{
+          data: {{ salary|safe }},
+          backgroundColor: [
+             '#32a651', '#FFBD33','#2629c9','#e03009','#e0099c','#1fcfcc'
+          ],
+          label: 'Employee with their salary'
+        }],
+        labels: {{ customer_id|safe }}
+      },
+      options: {
+        responsive: true,animation: {
+            duration: 5000,
+        }
+      }
+    };
+    
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      var ctxy = document.getElementById('pie-chart1').getContext('2d');
+      var ctx2 = document.getElementById('line-chart').getContext('2d');
+      var ct_employee = document.getElementById('third-row1').getContext('2d');
+      var ct_insurance = document.getElementById('third-row2').getContext('2d');
+      
+
+      
+
+      var ctx3 = document.getElementById('third-row1').getContext('2d');
+      var ctx4 = document.getElementById('third-row2').getContext('2d');
+      
+      window.myPie = new Chart(ctx, config);
+      window.myPie = new Chart(ctxy, config3);
+      window.myPie = new Chart(ctx2, config2);
+      window.myPie = new Chart(ct_employee, config_employee);
+      window.myPie = new Chart(ct_insurance, config4);
+
+      window.myPie = new Chart(ctx3, config3);
+      window.myPie = new Chart(ctx4, config4);
+     
+    };
+
+
+</script>
+
+
+
+ {% endblock table %}
+

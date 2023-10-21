@@ -1,0 +1,57 @@
+{% extends 'tables_base.html' %}
+
+{% block title %}
+<title>employees</title>
+{% endblock title %}
+
+{% block table %}
+{% load static %}
+
+<style>
+  body{
+    background-color:#c7c4c4;
+  }
+  h4 {
+    background-color:#2e4863 ;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+</style>
+<h4 class="text-center">Employees Table</h4>
+<table class="table" style="background-color: #04407b;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Joined Date</th>
+          <th scope="col">Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for employee in employees %}
+        <tr>
+          <th scope="row">{{employee.employee_id}}</th>
+          <td>{{employee.employee_id}}</td>
+          <td>{{employee.first_name}}</td>
+          <td>{{employee.address}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.phone}}</td>
+          <td>{{employee.joined_date}}</td>
+          <td>Rs.{{employee.salary}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+{% endblock table %}

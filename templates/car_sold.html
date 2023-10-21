@@ -1,0 +1,55 @@
+{% extends 'tables_base.html' %}
+
+{% block title %}
+<title>car sold</title>
+{% endblock title %}
+
+{% block table %}
+{% load static %}
+
+<style>
+  body{
+    background-color:#c7c4c4;
+  }
+  h4 {
+    background-color:#2e4863 ;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+</style>
+<h4 class="text-center">Car Sold Table</h4>
+<table class="table" style="background-color: #04407b;color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Customer</th>
+          <th scope="col">Sold price</th>
+          <th scope="col">Sold date</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Car for sale</th>
+          <th scope="col">Purchased price</th>
+        </tr>
+      </thead>
+      <tbody>
+      {%for sold in cars_sold%}
+        <tr>
+          <th scope="row">{{sold.car_sold_id}}</th>
+          <td>{{sold.customer}}</td>
+          <td>{{sold.sold_price}}</td>
+          <td>{{sold.sold_date}}</td>
+          <td>{{sold.payment}}</td>
+          <td>{{sold.car_for_sale}}</td>
+          <td>{{sold.purchased_price}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+{% endblock table %}

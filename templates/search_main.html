@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    {% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <style>
+input:focus {
+  border-color: aquamarine;
+ 
+}
+
+.search :hover{
+    background-color: rgb(70, 146, 25);
+}
+.not-visible{
+    display: none;
+}
+
+.result-card{
+    width: 50%;
+    box-shadow: -28px 2px 28px 0px rgba(23, 189, 23, 0.44);
+-webkit-box-shadow: -28px 2px 28px 0px rgba(74, 216, 38, 0.44);
+-moz-box-shadow: -28px 2px 28px 0px rgba(38, 41, 216, 0.44);
+-webkit-transition: all 0.5s 0s ease;
+-moz-transition: all 0.5s 0s ease;
+-o-transition: all 0.5s 0s ease;
+transition: all 0.5s 0s ease;
+border-radius: 7px;
+padding: 15px 15px;
+margin: 0 auto;
+
+}
+.item{
+    color: aquamarine;
+}
+    </style>
+
+    <title>search-main</title>
+  </head>
+  <body>
+
+    {{base_url}}
+   
+   <div class="w-100 text-center my-3">
+
+    <form  id="search-form" autocomplete="off">
+        {% csrf_token %}
+
+        <input type="text" id="search-input" class="p-1 w-50 search" placeholder="search for customer">
+    </form>
+
+    <div id="result-box" class="result-card not-visible"></div>
+   </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script src="{%  static  'main.js'  %}"></script>
+
+   
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

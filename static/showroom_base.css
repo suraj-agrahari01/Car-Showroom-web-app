@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+body {
+    background: #c7c4c4;
+
+}
+
+img {
+    height: 80vh;
+}
+.logo{
+    width: 100vw;
+    background-color: #c7c4c4;
+    height: 8vh;  
+}  
+
+.logo h2 {
+    position: fixed;
+    width: 100%;
+    margin-top: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #04407b;
+    color: white;
+    border-radius: 1rem;
+    font-family: 'Suez One', serif;
+    letter-spacing: .3rem;
+   
+}
+.btn-cotainer {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #c7c4c4;
+
+
+}
+.btns{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.btns a{
+    margin: .6rem;
+    width: 40%;
+
+}
+#showroom_modal{
+    display: flex;
+}
+.modal-content {
+    background: #c7c4c4 !important;
+}
+
+.tables {
+    width:80%;
+    margin-top: .2rem;
+}

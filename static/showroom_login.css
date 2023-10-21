@@ -1,0 +1,23 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center ;
+  align-items: center; 
+  background-color: #c7c4c4 !important; 
+}
+ main {
+  width: 40vw;
+  margin-top: 1rem;
+  padding: 2rem;
+border: 2px solid #3e556d;
+border-radius: 1rem;
+
+ }
+ 

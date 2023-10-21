@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+body{
+    background-color: #c7c4c4; 
+}
+
+#header {
+    margin-top: 2rem;
+    justify-content: center;
+    background: #04407b;
+    border-radius: 5rem;
+    color: white;
+}
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    font-family: 'Suez One', serif;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+}
+
+#container{
+    background-color: #c7c4c4;
+}
+.content {
+    background-color: #c7c4c4;
+    
+}
+#content h2 {
+    color:#04407b;
+    text-align: center;
+}
+.content h1{
+display: none;    
+}
+#user-tools {
+    display: none;
+}
+
+#content-related .module {
+    display: none;
+}
+.dashboard #content {
+    width: 700px;
+    margin: auto;
+    background-color: #04407b;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+#content-main{
+    margin-left: auto;
+}
+#container > .main{
+    justify-content: center;
+}
+
+
+.module caption, .inline-group h2 {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+div.breadcrumbs {
+    margin-top: 2rem;
+    border-radius: 3rem;
+    background:#04407b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50vw;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+div.breadcrumbs > a{
+
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+.object-tools a.addlink {
+    display: none;
+}
+
+.app-auth.module {
+    display: none;
+}
+
+.main.shifted > #nav-sidebar,.toggle-nav-sidebar{
+    margin-top: 1.3rem;
+}
+
+#changelist-form{
+    overflow: hidden;
+}
+
+#toggle-nav-sidebar ,#nav-sidebar{
+    display: none;
+}
+.main.shifted .content {
+    width: 2%;
+}
+
+/* admin login page */
+
+
+
+.login #container
+{
+    min-width: none;
+}
+
+/* logout button design */
+
+#footer {
+    display: flex;
+    justify-content: center;
+}
+
+#footer input{
+    background-color:#04407b ;
+}
+
+.content ul{
+    margin-top: 2rem;
+    text-align: center;
+}
+#messagelist {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+}
+#messagelist > li{
+    border-radius: 2rem;
+}
+.object-tools {
+    display: none;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background:#03203C;
+
+}
+.button.default, input[type=submit].default, .submit-row input.default {
+    background:#03203C;
+
+}
+.dashboard .module table td .addlink{
+    display: block;
+    padding-right: .6em;
+    background-color: green;
+    color: white;
+    border-radius: .5rem;
+}
+.dashboard .module table td .changelink{
+    display: block;
+    padding-right: .6em;
+    background-color: yellow;
+    color: black;
+    border-radius: .5rem;
+
+}
+
+/* table color change here  */
+
+tr:nth-child(odd), .row-form-errors {
+    background: #120E43;
+}
+tr:nth-child(even), .row-form-errors {
+    background: #03203C;
+}
+#changelist.actions {
+    background: red;
+
+}
+.paginator {
+    text-align: center;
+}
+
+.module{
+    background-color: #04407b;
+    text-align: center;
+} 
+.form-row input {
+    background-color: #04407b;
+    border: 1px solid white;
+    width: 30%;
+}
+
+#content {
+    margin-top: 2rem;
+    border-radius: 1rem;
+    background-color: #03203C;    
+}
+#content h2 {
+    display: none;
+}
